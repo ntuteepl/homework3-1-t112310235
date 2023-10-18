@@ -7,7 +7,7 @@ int main()
 {
 
 
-    int a[4];
+   /* int a[4];
     int b[4];
     for (int i = 0; i < 4; i++) {
             scanf("%1d", &a[i]);
@@ -31,8 +31,8 @@ int main()
          printf("%d\n",a1);
         }
 
-
-    /*int a,b;
+*/
+    int a,b;
      scanf("%d %d", &a,&b);
 
       int sum1=(a/1000)+(a%1000)/100+((a%1000)%100/10)+((a%1000)%100%10/1);
@@ -46,7 +46,7 @@ int main()
          printf("%d\n",b);
         if(a<b)
          printf("%d\n",a);
-        }*/
+        }
 
 return 0;
 }
