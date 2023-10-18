@@ -9,7 +9,7 @@ int main() {
             s1=s2;
             s2=temp;
             temp=d1;
-            d1=d2;
+           d1=d2;
             d2=temp;
 
 
@@ -21,6 +21,16 @@ int main() {
             temp=d2;
             d2=d3;
             d3=temp;
+
+
+    }
+    if (s1>s2){
+        int temp=s1;
+            s1=s2;
+            s2=temp;
+            temp=d1;
+           d1=d2;
+            d2=temp;
 
 
     }
