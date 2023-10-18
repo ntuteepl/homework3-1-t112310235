@@ -36,9 +36,9 @@ int main() {
     }
 
     int cars=1;
-    if(d1>s2&&d1<=s3)
+    if(d1>=s2&&d1<=s3)
         cars=2;
-    if(d1>s2&&d1>s3)
+    if(d1>=s2&&d1>s3)
         cars=3;
 
     printf(" %d\n", cars);
