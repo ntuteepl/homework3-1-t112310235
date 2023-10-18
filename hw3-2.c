@@ -2,7 +2,7 @@
 
 int main() {
     int s1, d1, s2, d2, s3, d3;
-    printf("請輸入三筆訂單的出發時間和返回時間：\n");
+   
     scanf("%d %d %d %d %d %d", &s1, &d1, &s2, &d2, &s3, &d3);
     if (s1>s2){
         int temp=s1;
