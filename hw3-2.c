@@ -41,7 +41,7 @@ int main() {
     if(d1>s2&&d1>s3)
         cars=3;
 
-    printf("至少需要 %d 輛車輛\n", cars);
+    printf(" %d\n", cars);
 
     return 0;
 }
