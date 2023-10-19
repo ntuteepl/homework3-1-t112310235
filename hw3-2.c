@@ -1,43 +1,44 @@
 #include <stdio.h>
 
-int main() {
-    int s1, d1, s2, d2, s3, d3;
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
 
-    scanf("%d %d %d %d %d %d", &s1, &d1, &s2, &d2, &s3, &d3);
-    
-    if (s1 > s2) {
-        int temp = s1;
-        s1 = s2;
-        s2 = temp;
-        temp = d1;
-        d1 = d2;
-        d2 = temp;
+void sort(int start[], int end[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (end[j] > end[j + 1]) {
+                swap(&end[j], &end[j + 1]);
+                swap(&start[j], &start[j + 1]);
+            }
+        }
+    }
+}
+
+int main() {
+    int start[3], end[3];
+
+    // 输入订单的起始时间和结束时间
+    for (int i = 0; i < 3; i++) {
+        scanf("%d %d", &start[i], &end[i]);
     }
     
-    if (s2 > s3) {
-        int temp = s2;
-        s2 = s3;
-        s3 = temp;
-        temp = d2;
-        d2 = d3;
-        d3 = temp;
-    }
-    
-    if (s1 > s2) {
-        int temp = s1;
-        s1 = s2;
-        s2 = temp;
-        temp = d1;
-        d1 = d2;
-        d2 = temp;
-    }
-    
+    // 按结束时间对订单进行排序
+    sort(start, end, 3);
+
     int cars = 1;
-    
-    if (d1 > s2) {
-        cars = 2;
-        if (d1 > s3) {
-            cars = 3;
+    int current_end = end[0];
+
+    for (int i = 1; i < 3; i++) {
+        if (start[i] >= current_end) {
+            // 当前订单可以使用同一辆游览车
+            current_end = end[i];
+        } else {
+            // 需要另一辆游览车
+            cars++;
+            current_end = end[i];
         }
     }
 
@@ -45,9 +46,6 @@ int main() {
 
     return 0;
 }
-
-
-
 
 
 
