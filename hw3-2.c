@@ -7,7 +7,7 @@ int main() {
     scanf("%d %d %d %d %d %d", &s1, &d1, &s2, &d2, &s3, &d3);
 
     // 对订单按出发时间升序，结束时间降序排序
-    if (s1 > s2 || (s1 == s2 && d1 < d2)) {
+    if (s1 > s2 || (s1 == s2 && d1 > d2)) {
         int temp = s1;
         s1 = s2;
         s2 = temp;
@@ -16,7 +16,7 @@ int main() {
         d2 = temp;
     }
 
-    if (s2 > s3 || (s2 == s3 && d2 < d3)) {
+    if (s2 > s3 || (s2 == s3 && d2 > d3)) {
         int temp = s2;
         s2 = s3;
         s3 = temp;
@@ -25,7 +25,7 @@ int main() {
         d3 = temp;
     }
 
-    if (s1 > s2 || (s1 == s2 && d1 < d2)) {
+    if (s1 > s2 || (s1 == s2 && d1 > d2)) {
         int temp = s1;
         s1 = s2;
         s2 = temp;
