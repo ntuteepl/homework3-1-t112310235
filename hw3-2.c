@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int s1, d1, s2, d2, s3, d3:
+    int s1, d1, s2, d2, s3, d3;
 
     // 输入订单的起始时间和结束时间
     scanf("%d %d %d %d %d %d", &s1, &d1, &s2, &d2, &s3, &d3);
