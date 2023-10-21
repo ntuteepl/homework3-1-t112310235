@@ -37,7 +37,7 @@ int main() {
     int cars = 1;
     if((end1 > start2 && end1 <= start3)||(end1 <= start2 && end2 > start3)||(end1 > start2 && start3 > end2 && start3 > end1))
         cars=2;
-    if(end1> start2 && start3 > start2 && start3 < start1)
+    if((end1> start2 && start3 > start2 && start3 < start1)||(start1 == start2 && start3> start1 && start3> start2))
         cars=3;
     printf("%d\n", cars);
 
