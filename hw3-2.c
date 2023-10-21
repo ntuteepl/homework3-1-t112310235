@@ -38,7 +38,7 @@ int main() {
 
     if ((d1>s2&&s3>=d1)|| (d1<=s2&&s3<d2)||(d1>s2&&s3>=d2))
         cars = 2 ;
-    if((d1>s2&&s3>s2&&s3<s1)||(s1==s2&&s3<d1&&s3<d2)||(s2==s3&&d1>s2))
+    if((d1>s2&&s3>s2&&s3<d1)||(s1==s2&&s3<d1&&s3<d2)||(s2==s3&&d1>s2))
          cars = 3 ;
         printf("%d\n", cars);
 
