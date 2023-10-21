@@ -39,7 +39,8 @@ int main() {
     if(d1<=s2&&d2<=s3)
         cars=1;
 
-    if((d1<=(s2||d3))||(d1>s2&&s3>=d2))
+    if((s2>=d1&&d2>s3>d1)||(s3>=d1&&d1>s2>=s1)||(s3>=d2&&s2>=s1&&d1>d2&&d1>s3))
+
         cars=2;
     else
         cars=3;
