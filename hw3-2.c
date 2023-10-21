@@ -35,8 +35,8 @@ int main() {
     }
 
     int cars = 1; // 初始化车辆数量为1
-    if (s2 > d1) cars++;
-    if (s3 > d2) cars++;
+    if (s2 < d1) cars++;
+    if (s3 < d2) cars++;
     if(s1==s2&& s3>(d1||d2))
     cars=2;
 
