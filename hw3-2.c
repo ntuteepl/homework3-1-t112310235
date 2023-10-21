@@ -43,6 +43,10 @@ int main() {
     if (s3 < d2) {
         cars++; // 需要额外的车辆
     }
+    if(s3>=d1){
+        cars--;
+    }
+
 
     printf("%d\n", cars); // 输出最少车辆数量
 
