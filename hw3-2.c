@@ -33,18 +33,8 @@ int main() {
     }
 
     int cars = 1; // 初始化车辆数量为1
-    int current_end = d1; // 初始化当前订单的结束时间为第一个订单的结束时间
-
-    // 循环遍历订单，如果下一个订单的出发时间大于当前订单的结束时间，增加车辆
-    if (s2 > current_end) {
-        cars++;
-        current_end = d2;
-    }
-    if (s3 > current_end) {
-        cars++;
-        current_end = d3;
-    }
-
+   
+   
     printf("%d\n", cars); // 输出最少车辆数量
 
     return 0;
