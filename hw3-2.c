@@ -35,19 +35,10 @@ int main() {
     }
 
     int cars = 1;
-    int current_end = end1;
-
-    if (start2 >= current_end) {
-        current_end = end2;
-    } else {
-        cars++;
-        current_end = end3;
-    }
-
-    if (start3 >= current_end) {
-        current_end = end3;
-    }
-
+    if((end1 > start2 && end1 <= start3)||(end1 <= start2 && end2 > start3)||)(end1 > start2 && start3 > end2 && start3 > end1))   
+        cars=2;
+    if(end1> start2 && start3 > start2 && start3 < start1)
+        cars=3;
     printf("%d\n", cars);
 
     return 0;
