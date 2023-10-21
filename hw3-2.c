@@ -7,7 +7,7 @@ int main() {
     scanf("%d %d %d %d %d %d", &start1, &end1, &start2, &end2, &start3, &end3);
 
     // 根据订单的结束时间手动排序
-    if (end1 > end2) {
+    if (start1 > start2) {
         int temp = end1;
         end1 = end2;
         end2 = temp;
@@ -16,7 +16,7 @@ int main() {
         start2 = temp;
     }
 
-    if (end2 > end3) {
+    if (start2 > start3) {
         int temp = end2;
         end2 = end3;
         end3 = temp;
@@ -25,7 +25,7 @@ int main() {
         start3 = temp;
     }
 
-    if (end1 > end2) {
+    if (start1 > start2) {
         int temp = end1;
         end1 = end2;
         end2 = temp;
