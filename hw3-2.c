@@ -1,47 +1,44 @@
 #include <stdio.h>
 
+// 定义订单结构
+struct Order {
+    int start_time;
+    int end_time;
+};
+
+// 检查两个订单是否重叠
+int isOverlap(struct Order order1, struct Order order2) {
+    if (order1.start_time >= order2.end_time || order1.end_time <= order2.start_time) {
+        return 0; // 不重叠
+    } else {
+        return 1; // 重叠
+    }
+}
+
 int main() {
-    int s1, d1, s2, d2, s3, d3;
+    struct Order orders[3]; // 存储3笔订单的数组
+    int overlapCount = 0;  // 重叠订单计数
 
-    // 输入订单的起始时间和结束时间
-    scanf("%d %d %d %d %d %d", &s1, &d1, &s2, &d2, &s3, &d3);
-
-    // 对订单按出发时间升序，结束时间降序排序
-    if (s1 > s2 || (s1 == s2 && d1 < d2)) {
-        int temp = s1;
-        s1 = s2;
-        s2 = temp;
-        temp = d1;
-        d1 = d2;
-        d2 = temp;
+    // 输入订单信息
+    for (int i = 0; i < 3; i++) {
+        printf("输入第 %d 笔订单的开始时间 (小时)：", i + 1);
+        scanf("%d", &orders[i].start_time);
+        printf("输入第 %d 笔订单的结束时间 (小时)：", i + 1);
+        scanf("%d", &orders[i].end_time);
     }
 
-    if (s2 > s3 || (s2 == s3 && d2 < d3)) {
-        int temp = s2;
-        s2 = s3;
-        s3 = temp;
-        temp = d2;
-        d2 = d3;
-        d3 = temp;
+    // 检查订单是否重叠
+    for (int i = 0; i < 3; i++) {
+        for (int j = i + 1; j < 3; j++) {
+            if (isOverlap(orders[i], orders[j])) {
+                overlapCount++;
+            }
+        }
     }
 
-    if (s1 > s2 || (s1 == s2 && d1 < d2)) {
-        int temp = s1;
-        s1 = s2;
-        s2 = temp;
-        temp = d1;
-        d1 = d2;
-        d2 = temp;
-    }
-
-    int cars = 1; // 初始化车辆数量为1
-    if (s2 < d1) cars++;
-    if (s3 < d2) cars++;
-    if(s3 < d2&& s3>=d1) cars--;
-
-
-
-    printf("%d\n", cars); // 输出最少车辆数量
+    // 根据重叠订单数量确定派送车辆数量
+    int vehiclesRequired = overlapCount + 1; // 至少需要1辆车
+    printf("需要派送 %d 辆车\n", vehiclesRequired);
 
     return 0;
 }
