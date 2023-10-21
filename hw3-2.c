@@ -9,7 +9,7 @@ int main() {
 
     // 对订单按出发时间升序，结束时间降序排序
     if (s1 > s2 || (s1 == s2 && d1 < d2)) {
-        int temp = s1;
+        int temp = s1; 
         s1 = s2;
         s2 = temp;
         temp = d1;
